@@ -20,6 +20,6 @@ jobs:
     - name: Generate ascii art
       run: |
         sudo apt install cowsay -y
-        cowsay -f dragon "I am a dragon of Tejas a paltu dragon" > dragon.txt
-        cat dragon.txt
+        cowsay -f elephant "I am a elephant of Tejas a paltu elephant" > elephant.txt
+        cat elephant.txt
 
