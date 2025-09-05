@@ -16,4 +16,4 @@ jobs:
     - name: Run a multi-line script
       run: |
         echo "executing file read in same repo"
-        ls -lrt | awk '{print $NF}' | xargs -I{} cat {}
+        ls -lrt | awk '{print $NF}' | sed -n 2p | xargs cat
