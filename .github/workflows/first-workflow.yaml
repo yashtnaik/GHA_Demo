@@ -19,6 +19,7 @@ jobs:
         ls -lrt | awk '{print $NF}' | sed -n 2p | xargs cat
     - name: Generate ascii art
       run: |
+        sudo apt install cowsay -y
         cowsay -f dragon "I am a dragon of Tejas a paltu dragon" > dragon.txt
         cat dragon.txt
 
