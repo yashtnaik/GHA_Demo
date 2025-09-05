@@ -1,4 +1,4 @@
-name: first-job
+name: shell-script-job
 
 on:
   push:
@@ -6,25 +6,14 @@ on:
     - main
 
 jobs:
-  build:
+  execute-shell:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo "executing file read in same repo"
-        ls -lrt | awk '{print $NF}' | sed -n 2p | xargs cat
-    - name: Generate ascii art
-      run: |
-        sudo apt-get install -y cowsay
-        cowsay -f dragon "I am a dragon of Tejas a paltu dragon" > dragon.txt
-        cat dragon.txt
-    - name: Upload ascii art
-      uses: actions/upload-artifact@v4
-      with:
-        name: dragon-ascii-art
-        path: dragon.txt
+    - name: Checkout code
+      uses: actions/checkout@v4
 
+    - name: Run a one-line script
+      run: |
+        chmod +x tejas.sh
+        ./tejas.sh
